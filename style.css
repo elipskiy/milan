@@ -1,0 +1,228 @@
+/* Custom styles for Milan Planner */
+
+/* Tab styles */
+.tab-button {
+    @apply text-gray-600;
+}
+
+.tab-button.active {
+    @apply bg-white text-gray-900 shadow-sm;
+}
+
+.tab-content {
+    @apply block;
+}
+
+.tab-content.hidden {
+    @apply hidden;
+}
+
+/* Place card hover effects */
+.place-card {
+    @apply transition-all duration-300;
+}
+
+.place-card:hover {
+    @apply shadow-lg -translate-y-1;
+}
+
+.place-card img {
+    @apply transition-transform duration-300;
+}
+
+.place-card:hover img {
+    @apply scale-105;
+}
+
+/* Tag pills */
+.tag-pill {
+    @apply text-xs rounded-full px-2 py-1 bg-gray-100 text-gray-700 mr-1 opacity-80;
+}
+
+/* Heart icon animation */
+.heart-icon.favorited {
+    @apply text-red-500;
+    animation: heartBeat 0.5s ease-in-out;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Button hover effects */
+.btn-icon {
+    @apply transition-transform duration-200;
+}
+
+.btn-icon:hover {
+    @apply scale-110;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+    backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Day card animations */
+.day-card {
+    @apply transition-all duration-200;
+}
+
+.day-card:hover {
+    @apply shadow-md;
+}
+
+/* Place item drag hint */
+.place-item {
+    @apply transition-all duration-200;
+}
+
+.place-item:hover {
+    @apply bg-gray-50;
+}
+
+/* Loading states */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Toast animation */
+.toast-enter {
+    @apply translate-y-0 opacity-100;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .place-card {
+        margin-bottom: 1rem;
+    }
+    
+    .day-card {
+        margin-bottom: 1rem;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Badge styles */
+.hype-badge {
+    @apply inline-flex items-center px-2 py-1 rounded text-xs font-medium;
+}
+
+.hype-5 { @apply bg-red-100 text-red-800; }
+.hype-4 { @apply bg-orange-100 text-orange-800; }
+.hype-3 { @apply bg-yellow-100 text-yellow-800; }
+.hype-2 { @apply bg-green-100 text-green-800; }
+.hype-1 { @apply bg-gray-100 text-gray-800; }
+
+/* Category icons */
+.category-classic { @apply text-amber-600; }
+.category-modern { @apply text-blue-600; }
+.category-museum { @apply text-purple-600; }
+.category-food { @apply text-orange-600; }
+.category-bar { @apply text-red-600; }
+.category-rooftop { @apply text-sky-600; }
+.category-park { @apply text-green-600; }
+
+/* Price badges */
+.price-1 { @apply bg-green-100 text-green-800; }
+.price-2 { @apply bg-yellow-100 text-yellow-800; }
+.price-3 { @apply bg-red-100 text-red-800; }
+
+/* Booking needed warning */
+.booking-warning {
+    @apply bg-red-50 border border-red-200 text-red-700 px-2 py-1 rounded text-xs;
+}
+
+/* Image lazy loading */
+.place-image {
+    @apply bg-gray-200;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>');
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.place-image img {
+    @apply opacity-0 transition-opacity duration-300;
+}
+
+.place-image img.loaded {
+    @apply opacity-100;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed */
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .place-card, .day-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+button:focus-visible,
+input:focus-visible {
+    @apply outline-2 outline-blue-500 outline-offset-2;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .place-card {
+        @apply border-2 border-gray-800;
+    }
+    
+    .tab-button.active {
+        @apply bg-gray-900 text-white;
+    }
+}
