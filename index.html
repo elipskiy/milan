@@ -242,9 +242,34 @@
                             <div class="flex items-center gap-2">
                                 <input type="checkbox" id="onlyInstaToggle" class="rounded">
                                 <i data-lucide="camera" class="w-4 h-4 opacity-70"></i>
-                                <span>Только insta‑места</span>
+                                <span>Только TikTok/инста</span>
                             </div>
-                            <span class="ml-2 px-2 py-1 bg-gray-100 rounded text-xs">хайп ≥ 4</span>
+                            <span class="ml-2 px-2 py-1 bg-gray-100 rounded text-xs">фото-места</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 border rounded-xl">
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" id="onlyBookingToggle" class="rounded">
+                                <i data-lucide="calendar" class="w-4 h-4 opacity-70"></i>
+                                <span>Требуют бронь</span>
+                            </div>
+                            <span class="ml-2 px-2 py-1 bg-red-100 rounded text-xs text-red-700">заранее</span>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="text-xs uppercase tracking-wide opacity-60">Время посещения</p>
+                                <button id="resetTimeBtn" class="text-sm text-blue-600 hover:text-blue-800">
+                                    Сбросить
+                                </button>
+                            </div>
+                            <select id="timeFilter" class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option value="">Любое время</option>
+                                <option value="morning">Утром</option>
+                                <option value="afternoon">Днём</option>
+                                <option value="evening">Вечером</option>
+                                <option value="night">Ночью</option>
+                            </select>
                         </div>
                         
                         <div class="border-t pt-4 space-y-3">
